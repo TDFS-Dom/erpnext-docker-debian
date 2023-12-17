@@ -94,7 +94,7 @@ RUN sudo apt-get update \
     # copy MariaDB Config
     && sudo cp /home/$systemUser/mariadb.cnf /etc/mysql/mariadb.cnf \
     && sudo service mariadb start \
-    && sudo mariadb --user="root" --password="${mysqlPass}" --execute="ALTER USER 'root'@'localhost' IDENTIFIED BY '${mysqlPass}';" \
+    && sudo mariadb --user="root" --password="${mysqlPass}" --execute="ALTER USER 'root'@'%' IDENTIFIED BY '${mysqlPass}';" \
     ###############################################
     # Init Bench
     ###############################################
